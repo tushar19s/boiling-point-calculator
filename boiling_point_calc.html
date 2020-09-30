@@ -1,0 +1,157 @@
+
+
+<div dir="ltr" style="text-align: left" trbidi="on">
+  <!-- Your StyleSheet -->
+  <style media="screen" type="text/css">
+   html {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: white;
+        }
+        
+
+        body #parent-container {
+            background-color: whitesmoke;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        body #parent-container .bttn {
+            background-color: #0061ae;
+            outline: none;
+            border: none;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5%;
+            
+        }
+        body #parent-container .btttn {
+            background-color: #0061ae;
+            font-weight: bold;
+            outline: none;
+            border: none;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5%;
+            
+        }
+
+
+        body .disabled {
+            background-color: #ffffff;
+        }
+
+        body #heading {
+            color: white;
+            background-color: #0061ae;
+            
+        }
+
+        body #heading-steps {
+            color: #0061ae;
+            text-align: left !important;
+        }
+
+        /* Removing number spiners from input[type=number]*/
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+  </style>
+
+  <!-- Your HTML Code -->
+  <!-- Parent Container -->
+  <div class="container" id="parent-container">
+   
+    <!-- Title Heading -->
+    <div
+      class="alert-info text-center"
+      id="heading"
+    >
+      <h1><strong>Boiling Point Calculator</strong></h1>
+    </div>
+
+    <!-- Calculator main section -->
+    <div class="form-group">
+      <div class="d-block">
+        Molal Concentration of Solute in Solution(m):
+        <input id="input1" class="col-3 mr-2" />
+      </div><br>
+      <div class="d-block">
+       Boiling point Elevation Constant(Kb):
+            <input id="input2"  class="col-3 mr-2" />
+      </div><br>
+      <div class="d-block">
+       Boiling Point elevation(Δ T):
+       <input id="input3"  class="col-3 mr-2" />
+      </div><br>
+      <div class="d-block">
+        X = 
+        <input
+          id="result"
+         
+          class="col-3 mr-2 disabled"
+          disabled="disabled"
+        />
+      </div><br>
+      <div >
+        <em><input type="button" class="btttn" value="Calculate" onclick="solve()"/></em>
+      </div>
+      
+    </div>
+
+    <!-- How to use Steps -->
+    <div>
+      <h2 id="heading-steps"  >
+        How to Use the Boiling Point Calculator?
+      </h2>
+      <p>
+        The procedure to use the Boiling point calculator is as
+        follows:<br />
+        <strong>Step 1:</strong> Enter the Given data in their respective
+        input fields <br /><strong>Step 2:</strong>Enter 'x' in place of the unknown value <br /><strong>Step 3:</strong> Now click the  Calculate button to find the value of x.
+      </p>
+    </div>
+  </div>
+
+  <!-- Your JavaScript Code -->
+  <script type="text/javascript">
+ 
+    function solve()
+            {
+                var a = document.getElementById("input1").value ;
+            var b = document.getElementById("input2").value ;
+            var c = document.getElementById("input3").value ;
+            if (a=='x')
+            {
+                var y=c/b;
+                
+            } 
+            else if (b=='x') 
+            {
+                var y=c/a;
+                
+            }
+             else 
+            {
+               var  y=a*b;
+               
+            }
+            document.getElementById("result").value = y;
+            }
+  </script>
+</div>
